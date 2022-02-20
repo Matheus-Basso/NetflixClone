@@ -5,7 +5,7 @@ import List from "./components/List";
 import Featured from "./components/Featured";
 import Header from "./components/Header";
 
-export default () => {
+function App() {
   const [movieList, setMovieList] = useState([]);
   const [topData, setTopData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
@@ -15,7 +15,7 @@ export default () => {
       let list = await Tmdb.getHomeList();
       setMovieList(list);
 
-      let originals = list.filter((i) => i.slug == "originals");
+      let originals = list.filter((i) => i.slug === "originals");
       let randomChosen = Math.floor(
         Math.random() * (originals[0].items.results.length - 1)
       );
@@ -64,14 +64,14 @@ export default () => {
           <a href="https://www.linkedin.com/in/matheus-basso-5a2194223/">
             <img
               className="footer--linkedin"
-              src="http://assets.stickpng.com/images/58e91afdeb97430e81906504.png"
+              src={require("./assets/linkedin.png")}
               alt="LinkedIn"
             />
           </a>
           <a href="https://github.com/Matheus-Basso">
             <img
               className="footer--github"
-              src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"
+              src={require("./assets/github.png")}
               alt="GitHub"
             />
           </a>
@@ -88,3 +88,5 @@ export default () => {
     </>
   );
 };
+
+export default App;

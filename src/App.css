@@ -27,11 +27,6 @@ footer {
   margin: 10px 10px;
 }
 
-.footer--github {
-    background-color: rgb(216, 216, 216);
-    border-radius: 3px;
-}
-
 .loading {
   background-color: #000;
   top: 0;
